@@ -4,7 +4,7 @@ body {
     color: #333;
     margin: 0;
     height: 100%;
-    overflow-y: auto; /* Ensure scrolling is enabled */
+    overflow-y: auto; 
 }
 
 .quiz-container {
@@ -14,7 +14,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 600px;
-    margin: 20px auto; /* Center the container and add top margin */
+    margin: 20px auto; 
     text-align: center;
 }
 
