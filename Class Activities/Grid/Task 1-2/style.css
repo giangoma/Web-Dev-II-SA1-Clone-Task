@@ -1,0 +1,203 @@
+html {
+    background: url(../Images/bluechkr.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    border: 3px solid #1b1464;
+    background-color: #86c6e5;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hamburger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+}
+
+header img {
+    height: 50px;
+}
+
+.container {
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+}
+
+.sidebar {
+    border: 3px solid #1b1464;
+    background-color: #86c6e5;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    font-size: 2em;
+    text-align: center;
+}
+
+.sidebar p {
+    font-size: 1em;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+.sidebar-link {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.sidebar-link img {
+    width: auto;
+    /* Adjust size as needed */
+    height: 50px;
+    border-radius: 10px;
+    /* Optional styling */
+}
+
+.main-content {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    width: 100%;
+    margin-left: 250px;
+    box-sizing: border-box;
+    z-index: 0;
+}
+
+.photo-grid {
+    display: grid;
+    gap: 10px;
+    width: 100%;
+    max-width: 800px;
+    margin-left: -27%;
+    /* Center the grid horizontally */
+}
+
+/* Default grid layout for larger screens */
+.photo-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        "img1 img2 img3"
+        "img4 img2 img5";
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-grid img:nth-child(1) {
+    grid-area: img1;
+}
+
+.photo-grid img:nth-child(2) {
+    grid-area: img2;
+}
+
+.photo-grid img:nth-child(3) {
+    grid-area: img3;
+}
+
+.photo-grid img:nth-child(4) {
+    grid-area: img4;
+}
+
+.photo-grid img:nth-child(5) {
+    grid-area: img5;
+}
+
+.sticker {
+    position: absolute;
+    z-index: 999;
+    width: 200px;
+    height: auto;
+}
+
+.top-left {
+    top: 150px;
+    left: 150px;
+}
+
+.bottom-right {
+    bottom: -230px;
+    right: 230px;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 900px) {
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "img1 img2"
+            "img3 img2"
+            "img4 img5";
+        margin-left: 0%;
+        margin-right: 10%;
+    }
+
+    .sticker {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .photo-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "img1"
+            "img2"
+            "img3"
+            "img4"
+            "img5";
+        margin-left: 10px;
+        /* Adjust left margin for smaller screens */
+        margin-right: 10px;
+        /* Adjust right margin for smaller screens */
+    }
+
+    .sticker {
+        display: none;
+    }
+}
